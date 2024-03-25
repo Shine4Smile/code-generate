@@ -34,14 +34,14 @@ class Login implements Callable<Integer> {
 
     public static void main(String[] args) {
         // 模拟传参
-        args = new String[]{"-u", "ZhangSan"};
+        String[] myArgs = new String[]{"-u", "ZhangSan"};
         // 获取所有选项
         List<String> fields = OptionAnnotationProcessor.processFields(Login.class);
         // 移除用户已输入的选项
-        fields.removeAll(Arrays.asList(args));
+        fields.removeAll(Arrays.asList(myArgs));
         String[] fieldsArray = fields.toArray(new String[0]);
         // 将其他用户未输入的选项拼接到用户输入的命令后面
-        String[] commandArray = ArrayUtil.append(args, fieldsArray);
+        String[] commandArray = ArrayUtil.append(myArgs, fieldsArray);
         new CommandLine(new Login()).execute(commandArray);
     }
 }
