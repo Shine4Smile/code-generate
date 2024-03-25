@@ -5,11 +5,14 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
+
 /**
  * some exports omitted for the sake of brevity
  * mixinStandardHelpOptions为true表示开启帮助手册
+ * 实现命令行需要实现Callable或者Runnable接口
+ *
+ * @author Simple
  */
-
 @Command(name = "ASCIIArt", version = "ASCIIArt 1.0", mixinStandardHelpOptions = true)
 public class ASCIIArt implements Runnable {
 
@@ -24,7 +27,7 @@ public class ASCIIArt implements Runnable {
      */
     @Parameters(paramLabel = "<word>", defaultValue = "Hello, picocli",
             description = "Words to be translated into ASCII art.")
-    private String[] words = {"Hello,", "picocli"};
+    private final String[] words = {"Hello,", "picocli"};
 
     @Override
     public void run() {
