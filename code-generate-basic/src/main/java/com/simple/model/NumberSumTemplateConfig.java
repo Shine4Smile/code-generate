@@ -24,5 +24,5 @@ public class NumberSumTemplateConfig {
     /**
      * 是否循环读取
      */
-    private Boolean loop;
+    private boolean loop;
 }

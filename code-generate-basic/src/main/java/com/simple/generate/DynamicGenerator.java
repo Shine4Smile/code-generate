@@ -5,10 +5,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 
 /**
  * 动态文件生成器
@@ -49,7 +46,8 @@ public class DynamicGenerator {
         String fileName = new File(inputPath).getName();
         Template template = configuration.getTemplate(fileName);
         // 生成数据渲染后的文件
-        Writer out = new FileWriter(outputPath);
+//        Writer out = new FileWriter(outputPath);
+        Writer out = new OutputStreamWriter(new FileOutputStream(outputPath), "utf-8");
         template.process(model, out);
         // 关闭流
         out.close();
