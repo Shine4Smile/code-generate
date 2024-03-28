@@ -1,8 +1,8 @@
-package com.simple.cli.command;
+package com.simple.maker.cli.command;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.simple.generate.MainGenerator;
-import com.simple.model.NumberSumTemplateConfig;
+import com.simple.maker.generate.MainGenerator;
+import com.simple.maker.model.NumberSumTemplateConfig;
 import lombok.Data;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;

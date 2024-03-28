@@ -1,4 +1,4 @@
-package com.simple.generate;
+package com.simple.maker.generate;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.IORuntimeException;

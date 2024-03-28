@@ -1,4 +1,4 @@
-package com.simple.cli.example;
+package com.simple.maker.cli.example;
 
 import cn.hutool.core.util.ArrayUtil;
 import picocli.CommandLine;

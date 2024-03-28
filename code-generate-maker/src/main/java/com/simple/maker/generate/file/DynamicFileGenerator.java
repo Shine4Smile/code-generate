@@ -1,6 +1,6 @@
-package com.simple.generate;
+package com.simple.maker.generate.file;
 
-import com.simple.model.NumberSumTemplateConfig;
+import cn.hutool.core.io.FileUtil;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -12,20 +12,7 @@ import java.io.*;
  *
  * @author Simple
  */
-public class DynamicGenerator {
-    public static void main(String[] args) throws IOException, TemplateException {
-        // 指定模板文件存放路径
-        String projectPath = System.getProperty("user.dir") + File.separator + "code-generate-basic";
-        String inputPath = projectPath + File.separator + "src\\main\\resources\\templates\\NumberSumTemplate.java.ftl";
-        String outputPath = projectPath + File.separator + "src\\main\\resources\\templates\\NumberSumTemplate.java";
-        // 创建数据模型
-        NumberSumTemplateConfig numberSumConf = new NumberSumTemplateConfig();
-        numberSumConf.setAuthor("simple");
-        numberSumConf.setOutputText("求和结果为");
-        numberSumConf.setLoop(true);
-        doGenerate(inputPath, outputPath, numberSumConf);
-    }
-
+public class DynamicFileGenerator {
     /**
      * 生成文件
      *
@@ -47,6 +34,10 @@ public class DynamicGenerator {
         Template template = configuration.getTemplate(fileName);
         // 生成数据渲染后的文件
 //        Writer out = new FileWriter(outputPath);
+        // 如果输出路径不存在，则先新建。touch创建文件，mkdir创建目录
+        if (!FileUtil.exist(outputPath)) {
+            FileUtil.touch(outputPath);
+        }
         Writer out = new OutputStreamWriter(new FileOutputStream(outputPath), "utf-8");
         template.process(model, out);
         // 关闭流

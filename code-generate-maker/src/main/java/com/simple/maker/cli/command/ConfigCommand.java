@@ -1,7 +1,7 @@
-package com.simple.cli.command;
+package com.simple.maker.cli.command;
 
 import cn.hutool.core.util.ReflectUtil;
-import com.simple.model.NumberSumTemplateConfig;
+import com.simple.maker.model.DataModel;
 import picocli.CommandLine;
 
 import java.lang.reflect.Field;
@@ -21,7 +21,7 @@ public class ConfigCommand implements Runnable {
 //            System.out.println("字段名：" + field.getName() + "，类型：" + field.getType());
 //        }
         // 使用hutool工具类中的ReflectUtil工具类实现
-        for (Field field : ReflectUtil.getFields(NumberSumTemplateConfig.class)) {
+        for (Field field : ReflectUtil.getFields(DataModel.class)) {
             System.out.println("字段名：" + field.getName() + "，类型：" + field.getType());
         }
     }

@@ -1,4 +1,4 @@
-package com.simple.cli.command;
+package com.simple.maker.cli.command;
 
 import cn.hutool.core.io.FileUtil;
 import picocli.CommandLine.Command;

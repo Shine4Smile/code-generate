@@ -1,4 +1,4 @@
-package com.simple.cli.example;
+package com.simple.maker.cli.example;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;

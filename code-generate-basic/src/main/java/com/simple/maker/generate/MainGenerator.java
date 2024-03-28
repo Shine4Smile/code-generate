@@ -1,6 +1,6 @@
-package com.simple.generate;
+package com.simple.maker.generate;
 
-import com.simple.model.NumberSumTemplateConfig;
+import com.simple.maker.model.NumberSumTemplateConfig;
 import freemarker.template.TemplateException;
 
 import java.io.File;

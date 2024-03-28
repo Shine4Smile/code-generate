@@ -1,8 +1,8 @@
-package com.simple.cli;
+package com.simple.maker.cli;
 
-import com.simple.cli.command.ConfigCommand;
-import com.simple.cli.command.GenerateCommand;
-import com.simple.cli.command.ListCommand;
+import com.simple.maker.cli.command.ConfigCommand;
+import com.simple.maker.cli.command.GenerateCommand;
+import com.simple.maker.cli.command.ListCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 

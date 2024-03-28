@@ -1,0 +1,57 @@
+"name": "acm-template-generate-pro",
+"description": "ACM求和示例模板",
+"basePackage": "com.simple",
+"version": "1.0",
+"author": "simple",
+"createTime": "2023-12-31",
+"fileConfig": {
+"inputRootPath": "D:\\Project\\GitProject\\code-generate\\code-generate-samples\\acm-template",
+"outputRootPath": "D:\\Project\\GitProject\\code-generate\\generate",
+"type": "dir",
+"files": [
+{
+"inputPath": "code-generate-samples/acm-template/src/com/simple/acm/NumberSumTemplate.java.ftl",
+"outputPath": "code-generate-samples/acm-template/src/com/simple/acm/NumberSumTemplate.java",
+"type": "file",
+"generateType": "dynamic"
+},
+{
+"inputPath": "_gitignore",
+"outputPath": "_gitignore",
+"type": "file",
+"generateType": "static"
+},
+{
+"inputPath": "README.md",
+"outputPath": "README.md",
+"type": "file",
+"generateType": "static"
+}
+]
+},
+"modelConfig": {
+"models": [
+{
+"fieldName": "loop",
+"type": "boolean",
+"description": "是否生成循环",
+"defaultValue": false,
+"abbr": "l"
+},
+{
+"fieldName": "author",
+"type": "String",
+"description": "作者注释",
+"defaultValue": "simple",
+"abbr": "a"
+},
+{
+"fieldName": "outputText",
+"type": "String",
+"description": "输出说明",
+"defaultValue": "输出结果",
+"abbr": "o"
+}
+]
+}
+}
