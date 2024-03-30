@@ -1,17 +1,18 @@
-package com.simple.maker.cli;
+package ${basePackage}.cli;
 
 import cn.hutool.core.util.ArrayUtil;
-import com.simple.maker.cli.command.ConfigCommand;
-import com.simple.maker.cli.command.GenerateCommand;
-import com.simple.maker.cli.command.ListCommand;
-import com.simple.maker.cli.command.OptionAnnotationProcessor;
+import ${basePackage}.cli.command.ConfigCommand;
+import ${basePackage}.cli.command.GenerateCommand;
+import ${basePackage}.cli.command.ListCommand;
+import ${basePackage}.cli.command.OptionAnnotationProcessor;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Command(name = "", mixinStandardHelpOptions = true)
+
+@Command(name = "${name}", mixinStandardHelpOptions = true)
 public class CommandExecutor implements Runnable {
     private CommandLine commandLine;
 

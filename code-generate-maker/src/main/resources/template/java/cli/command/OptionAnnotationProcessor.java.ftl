@@ -1,4 +1,4 @@
-package com.simple.maker.cli.command;
+package ${basePackage}.cli.command;
 
 import picocli.CommandLine.Option;
 
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 获取命令行中所有选项，用于拼接到用户输入的命令后面，从而实现逐步引导用户交互输入
  *
- * @author Simple
+ * @author ${author}
  */
 public class OptionAnnotationProcessor {
     public static List<String> processFields(Class<?> clazz) {
@@ -23,7 +23,6 @@ public class OptionAnnotationProcessor {
                 Option optionAnnotation = field.getAnnotation(Option.class);
                 // 获取@Option注解中的names选项的值
                 String[] names = optionAnnotation.names();
-                // 当names存在，且为必填选项则加入列表
                 if (names.length > 0 && optionAnnotation.required()) {
                     // 当names属性存在多个值时取其中一个即可
                     attribute.add(names[0]);

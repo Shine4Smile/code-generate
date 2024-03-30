@@ -21,20 +21,23 @@ public class FileGenerator {
      * @throws IOException
      */
     public static void doGenerate(Object model) throws TemplateException, IOException {
-        // 1.静态文件生成，获取项目根路径(这种方式获取到的根目录是当前idea打开工程的目录)
-        String projectPath = System.getProperty("user.dir");
-        // 输入路径
-        String inputPath = projectPath + File.separator + "code-generate-samples" + File.separator + "acm-template";
-        // 输出路径
-        String outputPath = projectPath;
-        // 执行复制，生成静态文件
+        // 定义输入、输出根路径
+        String inputRootPath = "D:\\Project\\GitProject\\code-generate\\code-generate-samples\\acm-template";
+        String outputRootPath = "D:\\Project\\GitProject\\code-generate";
+        System.out.println(inputRootPath);
+
+        String inputPath;
+        String outputPath;
+        inputPath = new File(inputRootPath, "src/com/simple/acm/NumberSumTemplate.java.ftl").getAbsolutePath();
+        outputPath = new File(outputRootPath, "src/com/simple/acm/NumberSumTemplate.java").getAbsolutePath();
+//        DynamicFileGenerator.doGenerate(inputPath, outputPath, model);
+
+        inputPath = new File(inputRootPath, "_gitignore").getAbsolutePath();
+        outputPath = new File(outputRootPath, "_gitignore").getAbsolutePath();
         StaticFileGenerator.copyFilesByHutool(inputPath, outputPath);
-
-        // 2.动态文件生成,指定模板文件存放路径
-        String dynamicInputPath = projectPath + File.separator + "code-generate-maker" + File.separator + "src\\main\\resources\\templates\\NumberSumTemplate.java.ftl";
-        String dynamicOutputPath = projectPath + File.separator + "acm-template\\src\\com\\simple\\acm\\NumberSumTemplate.java";
-
-        DynamicFileGenerator.doGenerate(dynamicInputPath, dynamicOutputPath, model);
+        inputPath = new File(inputRootPath, "README.md").getAbsolutePath();
+        outputPath = new File(outputRootPath, "README.md").getAbsolutePath();
+//        StaticFileGenerator.copyFilesByHutool(inputPath, outputPath);
     }
 
     public static void main(String[] args) throws IOException, TemplateException {

@@ -1,7 +1,7 @@
-package com.simple.maker.cli.command;
+package ${basePackage}.cli.command;
 
 import cn.hutool.core.util.ReflectUtil;
-import com.simple.maker.model.DataModel;
+import ${basePackage}.model.DataModel;
 import picocli.CommandLine.Command;
 
 import java.lang.reflect.Field;
@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
 /**
  * 获取数据模型参数信息
  *
- * @author Simple
+ * @author ${author}
  */
 @Command(name = "conf", mixinStandardHelpOptions = true)
 public class ConfigCommand implements Runnable {
