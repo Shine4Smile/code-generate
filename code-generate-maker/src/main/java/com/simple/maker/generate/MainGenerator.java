@@ -17,16 +17,19 @@ public class MainGenerator {
         // 获取项目根路径
         String projectPath = System.getProperty("user.dir");
         // 这里定义输出路径在code-generate-maker模块的generated目录下
-        String outputPath = projectPath + File.separator + "code-generate-maker" + File.separator + "generated";
+        String outputPath = projectPath + File.separator + "code-generate-maker" + File.separator + "generator" + File.separator + meta.getName();
         if (!FileUtil.exist(outputPath)) {
             // 若目录不存在，则先生成
             FileUtil.mkdir(outputPath);
         }
+        // 从原始模板文件路径复制到生成的代码包中
+        String sourceRootPath = meta.getFileConfig().getSourceRootPath();
+        String sourceCopyPath = outputPath + File.separator + ".source";
+        FileUtil.copy(sourceRootPath, sourceCopyPath, false);
 
         //读取resource目录
         ClassPathResource classPathResource = new ClassPathResource("");
         String inputResourcePath = classPathResource.getAbsolutePath();
-
         // 获取待生成文件的Java包位置
         String outputBasePackage = meta.getBasePackage();
         // 将包名中的点改为路径分隔符

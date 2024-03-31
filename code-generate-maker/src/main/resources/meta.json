@@ -6,8 +6,9 @@
   "author": "周树人",
   "createTime": "2023-12-31",
   "fileConfig": {
-    "inputRootPath": "D:/Project/GitProject/code-generate/code-generate-samples/acm-template",
-    "outputRootPath": "D:/Project/GitProject/code-generate/generate",
+    "inputRootPath": ".source/acm-template",
+    "outputRootPath": "generated",
+    "sourceRootPath": "D:/Project/GitProject/code-generate/code-generate-samples/acm-template",
     "type": "dir",
     "files": [
       {
